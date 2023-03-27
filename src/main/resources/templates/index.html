@@ -10,32 +10,76 @@
 <body>
 
 <div class="container-fluid">
-
     <header th:insert="general.html :: header"></header>
-
 </div>
 
-<div class="container-fluid" style="padding: 0;">
-    <div class="jumbotron d-flex align-items-center vh-80" style="border-radius: 0px;">
+
+
+
+<div class="container-fluid" style="position:relative;padding: 0;border-radius: 0px;z-index:1">
+    <div id="particles" style="position:absolute;z-index:0;    top:0;    width:100%;    height:100%;"></div>
+    <div class="jumbotron d-flex align-items-center"  style="height: 600px;">
         <div class="row mx-auto align-self-center">
             <div class="col-lg-6 text-center mx-auto">
-                <h1 class="display-4">Iteration Project</h1>
-                <p style="padding-top: 18px;"> This website was created with the intention of being a record of
+                <h1 class="display-4">Welcome to Iteration Project</h1>
+                <p style="padding-top: 18px;"> This website was created to serve as a record of
                     all of the iterations through which
-                    various concepts of web development has been utilized to produce a more and more complex development product,
-                    in
-                    both
-                    external functionality and internal workings and design.
+                    various concepts of web development has been utilized to produce a more and more complex iteration,
+                    in both functionality and internal design.
                 </p>
-                <p> Commonly Used for all Iterations </p>
-                    <img src="../static/images/Apache_Maven_logo.svg" alt="Maven Logo" width="200" th:src="@{/images/Apache_Maven_logo.svg}">
-                    <img src="../static/images/springio-ar21.svg" alt="Spring Logo" width="200" th:src="@{/images/springio-ar21.svg}">
             </div>
         </div>
     </div>
 </div>
 
 
+
+<div class="container" style="padding: 0;">
+    <div class="row mx-auto align-self-center" style="padding-top:50px">
+        <h2 class="col-lg-6 text-center mx-auto">All Iterations Use</h2>
+    </div>
+
+    <div class="row" style="padding-top: 35px">
+        <div class="col-md-4 mx-auto d-flex justify-content-center align-self-center">
+            <img class="img-fluid" src="../static/images/Apache_Maven_logo.svg" alt="Maven Logo" width="180"
+                 style="height:60%;"
+                 th:src="@{/images/Apache_Maven_logo.svg}">
+        </div>
+        <div class="col-md-4 mx-auto d-flex justify-content-center align-self-center">
+            <img class="img-fluid" src="../static/images/springio-ar21.svg" alt="Spring Logo" width="180"
+                 th:src="@{/images/springio-ar21.svg}">
+        </div>
+        <div class="col-md-4 mx-auto d-flex justify-content-center align-self-center">
+
+            <img class="img-fluid" src="../static/images/thy.png" alt="Thyme Logo" width="180" style="height:55%;"
+                 th:src="@{/images/thy.png}">
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top:105px;">
+    <div class="row mx-auto align-self-center" style="padding-top:50px">
+        <h2 class="col-lg-6 text-center mx-auto">And Built Using</h2>
+    </div>
+
+    <div class="card mx-auto" style="width: 100%; height:110%;margin-top:50px;">
+        <div class="row no-gutters">
+            <div class="col-md-7">
+                <img class="card-img" src="../static/images/mvc_architecture.png" alt="Card Image"
+                     th:src="@{/images/mvc_architecture.png}">
+            </div>
+            <div class="col-md-5">
+                <div class="card-body">
+                    <!--<h5 class="card-title" style="margin:10px;">Architecture</h5>-->
+                    <p class="card-text" style="margin:10px;">A software architectural pattern commonly used for
+                        developing user interfaces that divide the related program logic into three interconnected
+                        elements. This is done to separate internal representations of information from the ways
+                        information is presented to and accepted from the user.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
 
@@ -101,6 +145,60 @@
     <footer th:insert="general.html :: footer"></footer>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
+<script type="text/javascript">
+      const options = {
+        background: {
+          color: "#e9ecef", // the canvas background color
+        },
+        interactivity: {
+          events: {
+            onClick: {
+              // this handles the mouse click event
+              enable: true,
+              mode: "push", // this adds particles
+            },
+            onHover: {
+              // this handles the mouse hover event
+              enable: true,
+              mode: "repulse", // this make particles move away from the mouse
+            },
+          },
+          modes: {
+            push: {
+              quantity: 6, // number of particles to add
+            },
+            repulse: {
+              distance: 100, // the distance of the particles from the mouse
+            },
+          },
+        },
+        particles: {
+            links: {
+            color: "#607385",
+            distance: 150,
+            enable: true,
+            opacity: 0.3,
+            width: 1
+          },
+          move: {
+            enable: true, // this makes particles move
+            speed: { min: 1, max: 3 }, // this is the speed of the particles
+          },
+          opacity: {
+            value: { min: 0.3, max: 0.5 }, // this sets the opacity of the particles
+          },
+          size: {
+            value: { min: 1, max: 3 }, // this sets the size of the particles
+          },
+          color: {
+            value: "#607385",
+          }
+        },
+        fullScreen: { enable: false },
+      };
+       tsParticles.load("particles", options);
+</script>
 
 </body>
 </html>
