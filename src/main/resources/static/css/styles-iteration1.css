@@ -1,0 +1,30 @@
+.default:hover {
+  background: #26734d;
+  color:#efefef;
+  border-color:#26734d;
+  border: 2px solid;
+}
+
+.default{
+    background-color:#e9ecef;
+    border-color:#26734d;
+    color:#26734d;
+    border: 2px solid;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 0px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 0px;
+}

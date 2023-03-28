@@ -14,23 +14,82 @@
         <div class="col-md-6 align-self-center d-flex justify-content-center justify-content-lg-end">
             <nav class="float-right">
                 <a class="nav-item" href="/html/">About</a>
-                <a class="nav-item" href="/css/">Nav2</a>
-                <a class="nav-item" href="/js/">N0av3</a>
-                <a class="nav-item" href="/python/">Nav4</a>
+                <a class="nav-item" href="/css/">Iteration 1</a>
+                <a class="nav-item" href="/js/">Iteration 2</a>
+                <a class="nav-item" href="/python/">Iteration 3</a>
             </nav>
         </div>
     </div>
 </div>
-<p>Go to the next page to see fragments in action</p>
-<aside>
-    <div>This is a sidebar</div>
-</aside>
-<div class="another">This is another sidebar</div>
-<footer th:fragment="footer" class="float-right">
-    <a th:href="@{/fragments}">Fragments Index</a> |
-    <a th:href="@{/markup}">Markup inclussion</a> |
-    <a th:href="@{/params}">Fragment params</a> |
-    <a th:href="@{/other}">Other</a>
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;" th:fragment="footer">
+            <!-- Grid container -->
+            <div class="container pt-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+
+                    <!-- Twitter -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+
+                    <!-- Google -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-google"></i
+                    ></a>
+
+                    <!-- Instagram -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-instagram"></i
+                    ></a>
+
+                    <!-- Linkedin -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <!-- Github -->
+                    <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                    ><i class="fab fa-github"></i
+                    ></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                Last Updated 2023:
+                <a class="text-dark" th:href="@{/}">Iteration Project</a>
+            </div>
+            <!-- Copyright -->
 </footer>
 </body>
 </html>
