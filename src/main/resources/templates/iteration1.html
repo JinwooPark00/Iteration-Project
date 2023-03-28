@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Iteration 1</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <header th:insert="general.html :: header"></header>
+</div>
+
+<div class="container-fluid">
+<div class="row justify-content-center" style="height: 80vh">
+    <div id="content" class="col-lg-5 col-md-12 order-sm-2 order-xs-2 order-md-2 order-lg-first ">
+
+        <p style="margin-top: 50px"><a href="/hello">Greet the world!</a></p>
+
+        <form action="/hello" method="GET" id="nameForm">
+            <div>
+                <label for="nameField">How should the app call you?</label>
+                <input name="myName" id="nameField">
+                <button class="btn bt-primary">Greet me!</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="info" class=" col-lg-2 col-md-12 order-sm-first order-xs-first order-md-first order-lg-last">
+
+        <div class="w3-container" style="padding-top:10px">
+            <div class="w3-panel w3-border w3-light-grey w3-round-large" style="padding-top:20px;padding-bottom:20px">
+                <p>Very First Iteration. As most people learning something for the first time would know, first step is,
+                    of course,
+                    mimicking the simplest tutorial on youtube one can find :) </p>
+                <div class="row">
+                    <div class="col d-flex align-self-center justify-content-center">
+                        <a th:href="@{/showIteration1}" class="nav-item">Back</a>
+                    </div>
+                    <div class="col d-flex align-self-center justify-content-center">
+                        <a th:href="@{/showIteration1}" class="nav-item">Home</a>
+                    </div>
+                    <div class="col d-flex align-self-center justify-content-center">
+                        <a th:href="@{/showIteration1}" class="btn btn-primary">Next Iteration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="container">
+    <footer th:insert="general.html :: footer"></footer>
+</div>
+
+</body>
+</html>

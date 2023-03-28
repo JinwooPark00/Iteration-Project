@@ -45,6 +45,12 @@ public class WelcomeController {
         return mav;
     }
 
+    @RequestMapping("/showIteration1")
+    public ModelAndView showIteration1() {
+        ModelAndView mav = new ModelAndView("iteration1");
+        return mav;
+    }
+
 }
 
 
