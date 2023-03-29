@@ -51,6 +51,20 @@ public class WelcomeController {
         return mav;
     }
 
+    @RequestMapping("/showIteration2")
+    public ModelAndView showIteration2() {
+        ModelAndView mav = new ModelAndView("iteration2");
+        return mav;
+    }
+
+    @RequestMapping("/showAddCustomerIter2")
+    public ModelAndView showAddCustomerIter2() {
+        ModelAndView mav = new ModelAndView("iter2-add-customer");
+        Customer customer = new Customer();
+        mav.addObject("customer", customer);
+        return mav;
+    }
+
 }
 
 

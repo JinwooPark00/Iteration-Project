@@ -13,10 +13,10 @@
         </div>
         <div class="col-md-6 align-self-center d-flex justify-content-center justify-content-lg-end">
             <nav class="float-right">
-                <a class="nav-item" href="/html/">About</a>
-                <a class="nav-item" href="/css/">Iteration 1</a>
-                <a class="nav-item" href="/js/">Iteration 2</a>
-                <a class="nav-item" href="/python/">Iteration 3</a>
+                <a class="nav-item px-2" th:href="@{/showAbout}">About</a>
+                <a class="nav-item px-2" th:href="@{/showIteration1}">Iteration 1</a>
+                <a class="nav-item px-2" th:href="@{/showIteration2}">Iteration 2</a>
+                <a class="nav-item px-2" th:href="@{/showIteration3}">Iteration 3</a>
             </nav>
         </div>
     </div>
@@ -30,7 +30,7 @@
             <!-- Instagram -->
             <a
                     class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
+                    href="https://www.instagram.com/saf_jnwprk/"
                     role="button"
                     data-mdb-ripple-color="dark"
             > <img class="img-fluid" src="../static/images/instagram.svg" alt="IG"
@@ -39,19 +39,19 @@
             <!-- Linkedin -->
             <a
                     class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
+                    href="https://www.linkedin.com/in/jinwoopark00/"
                     role="button"
                     data-mdb-ripple-color="dark"
             ><img class="img-fluid" src="../static/images/linkedin.svg" alt="LI"
-                  th:src="@{/images/linkedin.svg}"></a></a>
+                  th:src="@{/images/linkedin.svg}"></a>
             <!-- Github -->
             <a
                     class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
+                    href="https://github.com/JinwooPark00"
                     role="button"
                     data-mdb-ripple-color="dark"
             ><img class="img-fluid" src="../static/images/github.svg" alt="GH"
-                  th:src="@{/images/github.svg}"></a></a>
+                  th:src="@{/images/github.svg}"></a>
         </section>
         <!-- Section: Social media -->
     </div>
@@ -59,7 +59,7 @@
 
     <!-- Copyright -->
     <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        Last Updated 2023:
+        Last Updated 2023 |
         <a class="text-dark" th:href="@{/}"><i class="fa-solid fa-house"></i>Iteration Project</a>
     </div>
     <!-- Copyright -->

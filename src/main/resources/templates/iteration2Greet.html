@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/styles-iteration1.css}">
-    <title>Iteration 1</title>
+    <title>Iteration 2</title>
 </head>
 <body>
 
@@ -19,13 +19,13 @@
 
             <p style="margin-top: 50px"><a href="/hello">Greet the World!</a></p>
 
-            <form action="/hello" method="GET" id="nameForm">
-                <div>
-                    <label for="nameField">How should I call you?</label>
-                    <input name="myName" id="nameField">
-                    <button class="btn">Greet me!</button>
-                </div>
-            </form>
+            <div class="row align-self-center pl-3">
+                <form th:action="@{/Iter2Add}" method="POST">
+                    <input type="hidden" th:field="*{customer.id}"/>
+                    <button type="submit" class="btn mt-4">Greet me!</button>
+                </form>
+            </div>
+
 
         </div>
 
@@ -34,13 +34,14 @@
             <div class="card" style="padding-top:10px;background-color:#e9ecef;">
                 <div class="card-body"
                      style="padding-top:20px;padding-bottom:20px;background-color:#e9ecef;">
-                    <p>First step is of course, learning from the simplest tutorial on youtube one can find &#128512 </p>
-                    <p>This shows the very first iteration, in which user encounters a page that will greet by the
-                        name entered.</p>
-                    <p>Tip: There's a subtle way to say hi to the "World" as well.</p>
+                    <p>This is the second iteration that now takes in user input as a form when user clicks on button
+                        to answer.</p>
+                    <p>We are now saving information about the user as a simple Bean, to start being able to carry
+                        around
+                        data.</p>
                     <div class="row">
                         <div class="col d-flex align-self-center justify-content-center">
-                            <a class="nav-item" onclick="window.history.go(-1); return false;" >Back</a>
+                            <a class="nav-item" onclick="window.history.go(-1); return false;">Back</a>
                         </div>
                         <div class="col d-flex align-self-center justify-content-center">
                             <a th:href="@{/showIteration2}" class="btn default">Next Iteration</a>

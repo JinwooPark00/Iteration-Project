@@ -72,7 +72,6 @@
             </div>
             <div class="col-md-5">
                 <div class="card-body">
-                    <!--<h5 class="card-title" style="margin:10px;">Architecture</h5>-->
                     <p class="card-text" style="margin:10px;">A software architectural pattern commonly used for
                         developing user interfaces that divide the related program logic into three interconnected
                         elements. This is done to separate internal representations of information from the ways
@@ -110,8 +109,6 @@
     </div>
 
 
-    <a th:href="@{/addCustomerForm}" class="btn btn-primary mb-2">Add Customer</a>
-
     <a th:href="@{/list}" class="btn btn-primary mb-2">Customer List</a>
 
     <form action="/update" method="PUT">
@@ -136,61 +133,6 @@
 <div class="container-fluid" style="padding:0;bottom:0;">
     <footer th:insert="general.html :: footer"></footer>
 </div>
-
-<!--<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>-->
-<!--<script type="text/javascript">-->
-      <!--const options = {-->
-        <!--background: {-->
-          <!--color: "#e9ecef", // the canvas background color-->
-        <!--},-->
-        <!--interactivity: {-->
-          <!--events: {-->
-            <!--onClick: {-->
-              <!--// this handles the mouse click event-->
-              <!--enable: true,-->
-              <!--mode: "push", // this adds particles-->
-            <!--},-->
-            <!--onHover: {-->
-              <!--// this handles the mouse hover event-->
-              <!--enable: true,-->
-              <!--mode: "repulse", // this make particles move away from the mouse-->
-            <!--},-->
-          <!--},-->
-          <!--modes: {-->
-            <!--push: {-->
-              <!--quantity: 6, // number of particles to add-->
-            <!--},-->
-            <!--repulse: {-->
-              <!--distance: 100, // the distance of the particles from the mouse-->
-            <!--},-->
-          <!--},-->
-        <!--},-->
-        <!--particles: {-->
-            <!--links: {-->
-            <!--color: "#607385",-->
-            <!--distance: 150,-->
-            <!--enable: true,-->
-            <!--opacity: 0.3,-->
-            <!--width: 1-->
-          <!--},-->
-          <!--move: {-->
-            <!--enable: true, // this makes particles move-->
-            <!--speed: { min: 1, max: 3 }, // this is the speed of the particles-->
-          <!--},-->
-          <!--opacity: {-->
-            <!--value: { min: 0.3, max: 0.5 }, // this sets the opacity of the particles-->
-          <!--},-->
-          <!--size: {-->
-            <!--value: { min: 1, max: 3 }, // this sets the size of the particles-->
-          <!--},-->
-          <!--color: {-->
-            <!--value: "#607385",-->
-          <!--}-->
-        <!--},-->
-        <!--fullScreen: { enable: false },-->
-      <!--};-->
-       <!--tsParticles.load("particles", options);-->
-<!--</script>-->
 
 
 <script type="text/javascript" th:src="@{/js/myscripts.js}"></script>

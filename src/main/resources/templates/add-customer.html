@@ -13,7 +13,6 @@
     <form th:action="@{/add}" th:object="${customer}" method="POST">
         <input type="text" th:field="*{firstName}" placeholder="Enter First Name"/>
         <input type="text" th:field="*{lastName}" placeholder="Enter Last Name"/>
-        <!--<input type="text" th:field="*{firstName}" placeholder="Enter First Name"/>-->
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
