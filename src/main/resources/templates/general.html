@@ -23,73 +23,46 @@
 </div>
 
 <footer class="text-center text-white" style="background-color: #f1f1f1;" th:fragment="footer">
-            <!-- Grid container -->
-            <div class="container pt-4">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-facebook-f"></i
-                    ></a>
+    <!-- Grid container -->
+    <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Instagram -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            > <img class="img-fluid" src="../static/images/instagram.svg" alt="IG"
+                   th:src="@{/images/instagram.svg}"></a>
 
-                    <!-- Twitter -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-twitter"></i
-                    ></a>
+            <!-- Linkedin -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><img class="img-fluid" src="../static/images/linkedin.svg" alt="LI"
+                  th:src="@{/images/linkedin.svg}"></a></a>
+            <!-- Github -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><img class="img-fluid" src="../static/images/github.svg" alt="GH"
+                  th:src="@{/images/github.svg}"></a></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
 
-                    <!-- Google -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-google"></i
-                    ></a>
-
-                    <!-- Instagram -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-instagram"></i
-                    ></a>
-
-                    <!-- Linkedin -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-linkedin"></i
-                    ></a>
-                    <!-- Github -->
-                    <a
-                            class="btn btn-link btn-floating btn-lg text-dark m-1"
-                            href="#!"
-                            role="button"
-                            data-mdb-ripple-color="dark"
-                    ><i class="fab fa-github"></i
-                    ></a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                Last Updated 2023:
-                <a class="text-dark" th:href="@{/}">Iteration Project</a>
-            </div>
-            <!-- Copyright -->
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Last Updated 2023:
+        <a class="text-dark" th:href="@{/}"><i class="fa-solid fa-house"></i>Iteration Project</a>
+    </div>
+    <!-- Copyright -->
 </footer>
 </body>
 </html>
