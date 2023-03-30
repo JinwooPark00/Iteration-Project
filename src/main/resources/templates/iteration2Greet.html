@@ -22,12 +22,15 @@
             <div class="row align-self-center pl-3">
                 <form th:action="@{/Iter2Add}" method="POST">
                     <input type="hidden" th:field="*{customer.id}"/>
-                    <button type="submit" class="btn mt-4">Greet me!</button>
+                    <button type="submit" class="btn mt-4"
+                            style="background-color:#e9ecef;border-color:#26734d;color:#26734d;border: 2px solid;">
+                        Greet me!
+                    </button>
                 </form>
             </div>
 
-            <div th:href="@{/iteration2}" class="row align-self-center pt-2 pl-3">
-                <button type="submit" class="btn mt-4">Restart</button>
+            <div class="row align-self-center pt-2 pl-3">
+                <a  th:href="@{/showIteration2}" class="btn mt-4" style="background-color:#e9ecef;color:#2d332f;">Restart</a>
             </div>
 
 
@@ -48,7 +51,7 @@
                             <a class="nav-item" onclick="window.history.go(-1); return false;">Back</a>
                         </div>
                         <div class="col d-flex align-self-center justify-content-center">
-                            <a th:href="@{/showIteration2}" class="btn default">Next Iteration</a>
+                            <a th:href="@{/showIteration3}" class="btn default">Next Iteration</a>
                         </div>
                     </div>
                 </div>

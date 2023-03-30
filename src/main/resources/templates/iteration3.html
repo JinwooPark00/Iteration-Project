@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles-iteration1.css}">
+    <title>Iteration 3</title>
+</head>
+<body>
+
+<div id="header" class="container-fluid">
+    <header th:insert="general.html :: header"></header>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center" style="height: 100vh">
+        <div id="content" class="col-lg-5 col-md-12 order-sm-2 order-xs-2 order-md-2 order-lg-first ">
+
+            <div class="container">
+
+                <h2 align="center">User List</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+
+                    <th>First</th>
+                    <th>Last</th>
+                    <th style="width: 15%">
+                        <button id="addBtn" class="btn btn-info mx-5" data-toggle="modal" data-target="#addUserModal">
+                            Add
+                        </button>
+                    </th>
+                    <tb>
+                        <tr th:each="customer: ${customers}">
+                            <td th:text="${customer.firstName}"></td>
+                            <td th:text="${customer.lastName}"></td>
+                            <td>
+                                <button id="editBtn" class="btn btn-info mx-5" data-toggle="modal"
+                                        th:data-user-id="${customer.id}"
+                                        th:onclick="'javascript:updateCustomer(\''+ ${customer.id} +'\')'"
+                                        data-target="#exampleModal">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                    </tb>
+                    <!--th:href="@{/updateCustomer(customerId=${customer.id})}"-->
+
+                </table>
+            </div>
+            <hr style="margin-top:150px;margin-bottom:50px;"/>
+            <div class="container">
+                <h4>Update Customer</h4>
+                <form action="/update" method="PUT">
+                    <div>
+                        <label for="id">ID of customer being updated:</label>
+                        <input name="id" id="id">
+                    </div>
+                    <div>
+                        <label for="firstName">Update first name:</label>
+                        <input name="newFirst" id="firstName">
+                    </div>
+                    <div>
+                        <label for="lastName">Update last name:</label>
+                        <input name="newLast" id="lastName">
+                    </div>
+                    <button btn bt-primary>update customer</button>
+
+                </form>
+            </div>
+
+            <!-- Edit Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <form id="myForm" action="/update" method="POST">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Update Customer</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <input name="id" id="selectedCustomerId" type="hidden">
+                                <row><label for="firstName">Update First Name:</label>
+                                    <input name="newFirst" id="firstName"></row>
+                                <row><label for="lastName">Update Last Name:</label>
+                                    <input name="newLast" id="lastName"></row>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" id="updateCustomerBtn" class="btn btn-primary"> Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add User Modal -->
+            <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <form id="addUserForm" th:object="${customer}" th:action="@{/iter3Add}" method="POST">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addUserModalLongTitle">Add User</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mx-auto"><label for="firstName">Enter First Name:</label>
+                                    <input name="firstName" th:field="*{firstName}"></div>
+                                <div class="row mx-auto"><label for="lastName">Enter Last Name:</label>
+                                    <input name="lastName" th:field="*{lastName}"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" id="addUserBtn" class="btn btn-primary"> Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="info" class=" col-lg-2 col-md-10 order-sm-first order-xs-first order-md-first order-lg-last">
+
+            <div class="row">
+
+                <div class="card" style="padding-top:10px;background-color:#e9ecef;">
+                    <div class="card-body"
+                         style="padding-top:20px;padding-bottom:20px;background-color:#e9ecef;">
+                        <p>In the third iteration user now has a page that if
+                            1) user entered information from previous
+                            iteration, will be visible here.
+                            2) can add or edit any users on the list.</p>
+                        <p>
+                            Modals have been implemented to simplify user experience.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" style="padding-top:160px;">
+
+                <div class="card" style="padding-top:10px;background-color:#e9ecef;">
+                    <div class="card-body"
+                         style="padding-top:10px;padding-bottom:20px;background-color:#e9ecef;">
+                        <p>Third iteration itself went through a couple iterations. Under "Update Customer" is
+                        the old one which required user to type id, first name, last name, and also does not offer
+                        the same convenience and style of using modals.
+                        </p>
+                        <div class="row">
+                            <div class="col d-flex align-self-center justify-content-center">
+                                <a th:href="@{/showIteration2}" class="btn default">Previous</a>
+                            </div>
+                            <div class="col d-flex align-self-center justify-content-center">
+                                <a th:href="@{/showIteration3}" class="btn default">Next Iteration</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid" style="padding:0;">
+    <footer th:insert="general.html :: footer"></footer>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
+</script>
+
+<script type="text/javascript">
+function updateCustomer(id) {
+            <!--alert("Updating Customer with ID " + id);-->
+            document.getElementById("selectedCustomerId").value = id;
+}
+
+</script>
+
+</html>

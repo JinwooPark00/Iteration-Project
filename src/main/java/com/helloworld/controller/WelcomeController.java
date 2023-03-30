@@ -65,6 +65,15 @@ public class WelcomeController {
         return mav;
     }
 
+    @RequestMapping("/showIteration3")
+    public ModelAndView showIteration3() {
+        ModelAndView mav = new ModelAndView("iteration3");
+        List<Customer> list = (List<Customer>) customerRepository.findAll();
+        mav.addObject("customers", list);
+        Customer customer = new Customer();
+        mav.addObject("customer", customer);
+        return mav;
+    }
 }
 
 

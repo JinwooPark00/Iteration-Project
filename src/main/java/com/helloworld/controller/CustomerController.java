@@ -24,6 +24,7 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
+    @Deprecated
     @GetMapping("/list")
     public ModelAndView showCustomersList() {
         ModelAndView mav = new ModelAndView("list-customers");
@@ -32,7 +33,7 @@ public class CustomerController {
         return mav;
     }
 
-
+    @Deprecated
     @PostMapping("/add")
     public ModelAndView addCustomer(@ModelAttribute Customer customer) {
         logger.log(Level.INFO, "adding");
@@ -73,11 +74,25 @@ public class CustomerController {
 
     @PostMapping("/iter2Add")
     public ModelAndView iter2Add(@ModelAttribute Customer customer) {
-        logger.log(Level.INFO, "adding user for iter 2");
-        logger.log(Level.INFO, "name is " + customer.getFirstName() + customer.getLastName());
+        logger.log(Level.INFO, "Adding user for iter 2");
+        logger.log(Level.INFO, "Name is " + customer.getFirstName() + customer.getLastName());
         customerRepository.save(customer);
 
         ModelAndView mav = new ModelAndView("iteration2Greet");
+        mav.addObject("customer", customer);
+        return mav;
+    }
+
+    @PostMapping("/iter3Add")
+    public ModelAndView iter3Add(@ModelAttribute Customer customer) {
+        logger.log(Level.INFO, "Adding user for iter 3");
+        logger.log(Level.INFO, "Name is " + customer.getFirstName() + " " + customer.getLastName());
+        customerRepository.save(customer);
+
+        ModelAndView mav = new ModelAndView("iteration3");
+        List<Customer> list = (List<Customer>) customerRepository.findAll();
+        mav.addObject("customers", list);
+        customer = new Customer();
         mav.addObject("customer", customer);
         return mav;
     }
