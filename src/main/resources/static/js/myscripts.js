@@ -1,5 +1,3 @@
-//<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
-//<script type="text/javascript">
       const options = {
         background: {
           color: "#e9ecef", // the canvas background color
@@ -51,4 +49,3 @@
         fullScreen: { enable: false },
       };
        tsParticles.load("particles", options);
-//</script>
