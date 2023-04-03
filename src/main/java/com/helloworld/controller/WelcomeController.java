@@ -74,6 +74,12 @@ public class WelcomeController {
         mav.addObject("customer", customer);
         return mav;
     }
+
+    @RequestMapping("/showAbout")
+    public ModelAndView showAbout() {
+        ModelAndView mav = new ModelAndView("about");
+        return mav;
+    }
 }
 
 
