@@ -34,8 +34,6 @@ java -jar iteration-project.jar
 
 ## Authors
 
-Contributors names and contact info
-
 Jinwoo Park
 
 
