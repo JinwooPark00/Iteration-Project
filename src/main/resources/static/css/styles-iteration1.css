@@ -12,6 +12,19 @@
     border: 2px solid;
 }
 
+#addBtn, #editBtn, #greetBtn, #removeAllBtn {
+    background-color:white;
+    color:#26734d;
+    border: 2px solid;
+    border-color:#26734d;
+}
+
+#addBtn:hover, #editBtn:hover, #greetBtn:hover, #removeAllBtn:hover {
+  background: #26734d;
+  color:#efefef;
+  border-color:#26734d;
+  border: 2px solid;
+}
 
 html {
   position: relative;

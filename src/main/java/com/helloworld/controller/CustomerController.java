@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,6 +24,9 @@ public class CustomerController {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    WelcomeController welcomeController;
 
     @Deprecated
     @GetMapping("/list")
@@ -52,24 +56,28 @@ public class CustomerController {
     }
 
     @RequestMapping("/update")
-    public Customer updateCustomer(@RequestParam String newFirst, @RequestParam String newLast, @RequestParam long id){
-        logger.log(Level.INFO, "updating");
-        return customerRepository.findById(id)
-                .map(customer -> {
+    public ModelAndView updateCustomer(@RequestParam String newFirst, @RequestParam String newLast, @RequestParam long id){
+        logger.log(Level.INFO, "updating id " + id + "new first = " +newFirst + " new last" + newLast);
+
+        Customer customer = customerRepository.findById(id)
+                .map(c -> {
                     if (StringUtils.isNotBlank(newFirst)){
-                        customer.setFirstName(newFirst);
+                        c.setFirstName(newFirst);
                     }
                     if (StringUtils.isNotBlank(newLast)){
-                        customer.setLastName(newLast);
+                        c.setLastName(newLast);
                     }
-                    return customerRepository.save(customer);
+                    return customerRepository.save(c);
                 })
                 .orElseGet(() -> {
-                    Customer customer = new Customer();
-                    customer.setId(id);
-                    return customerRepository.save(customer);
+                    Customer c = new Customer();
+                    c.setId(id);
+                    c.setFirstName(newFirst);
+                    c.setLastName(newLast);
+                    return customerRepository.save(c);
                 });
 
+        return welcomeController.showIteration3();
     }
 
     @PostMapping("/iter2Add")
@@ -85,14 +93,27 @@ public class CustomerController {
 
     @PostMapping("/iter3Add")
     public ModelAndView iter3Add(@ModelAttribute Customer customer) {
-        logger.log(Level.INFO, "Adding user for iter 3");
+        logger.log(Level.INFO, "Adding user for iter 3, id = " + customer.getId());
         logger.log(Level.INFO, "Name is " + customer.getFirstName() + " " + customer.getLastName());
         customerRepository.save(customer);
 
         ModelAndView mav = new ModelAndView("iteration3");
         List<Customer> list = (List<Customer>) customerRepository.findAll();
+        logger.log(Level.INFO, "List conains id = " + list.get(0));
         mav.addObject("customers", list);
         customer = new Customer();
+        mav.addObject("customer", customer);
+        return mav;
+    }
+
+    @RequestMapping("/removeAll")
+    public ModelAndView removeAll(){
+        logger.log(Level.INFO, "Removing All Users");
+        customerRepository.deleteAll();
+        ModelAndView mav = new ModelAndView("iteration3");
+        List<Customer> list = (List<Customer>) customerRepository.findAll();
+        mav.addObject("customers", list);
+        Customer customer = new Customer();
         mav.addObject("customer", customer);
         return mav;
     }

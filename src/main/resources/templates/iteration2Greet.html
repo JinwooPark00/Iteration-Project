@@ -23,18 +23,17 @@
             <div class="row align-self-center pl-3">
                 <form th:action="@{/Iter2Add}" method="POST">
                     <input type="hidden" th:field="*{customer.id}"/>
-                    <button type="submit" class="btn mt-4"
-                            style="background-color:white;border-color:#26734d;color:#26734d;border: 2px solid;">
-                        Greet me!
+                    <button id="greetBtn" type="submit" class="btn mt-4">
+                        Now greet me!
                     </button>
                 </form>
             </div>
-
+            <div class="row align-self-center pl-3" style="margin-top: 45px;">
+                <p>or</p>
+            </div>
             <div class="row align-self-center pt-2 pl-3">
                 <a  th:href="@{/showIteration2}" class="btn mt-4" style="background-color:#e9ecef;color:#2d332f;">Restart</a>
             </div>
-
-
         </div>
 
         <div id="info" class=" col-lg-2 col-md-12 order-sm-first order-xs-first order-md-first order-lg-last">
