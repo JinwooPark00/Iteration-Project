@@ -1,9 +1,8 @@
 package com.helloworld.controller;
 
 
-import org.apache.commons.lang3.StringUtils;
-import com.helloworld.DAO.CustomerRepository;
-import com.helloworld.model.Customer;
+import com.helloworld.DAO.UserRepository;
+import com.helloworld.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class WelcomeController {
 
     @Autowired
-    CustomerRepository customerRepository;
+    UserRepository userRepository;
 
 
     @GetMapping({"/"})
@@ -38,11 +36,11 @@ public class WelcomeController {
     }
 
 
-    @GetMapping("/addCustomerForm")
-    public ModelAndView addCustomerForm() {
-        ModelAndView mav = new ModelAndView("add-customer");
-        Customer customer = new Customer();
-        mav.addObject("customer", customer);
+    @GetMapping("/addUserForm")
+    public ModelAndView addUserForm() {
+        ModelAndView mav = new ModelAndView("add-user");
+        User user = new User();
+        mav.addObject("user", user);
         return mav;
     }
 
@@ -58,21 +56,21 @@ public class WelcomeController {
         return mav;
     }
 
-    @RequestMapping("/showAddCustomerIter2")
-    public ModelAndView showAddCustomerIter2() {
-        ModelAndView mav = new ModelAndView("iter2-add-customer");
-        Customer customer = new Customer();
-        mav.addObject("customer", customer);
+    @RequestMapping("/showAddUserIter2")
+    public ModelAndView showAddUserIter2() {
+        ModelAndView mav = new ModelAndView("iter2-add-user");
+        User user = new User();
+        mav.addObject("user", user);
         return mav;
     }
 
     @RequestMapping("/showIteration3")
     public ModelAndView showIteration3() {
         ModelAndView mav = new ModelAndView("iteration3");
-        List<Customer> list = (List<Customer>) customerRepository.findAll();
-        mav.addObject("customers", list);
-        Customer customer = new Customer();
-        mav.addObject("customer", customer);
+        List<User> list = (List<User>) userRepository.findAll();
+        mav.addObject("users", list);
+        User user = new User();
+        mav.addObject("user", user);
         return mav;
     }
 

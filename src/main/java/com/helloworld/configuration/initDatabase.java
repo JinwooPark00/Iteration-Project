@@ -1,7 +1,7 @@
 package com.helloworld.configuration;
 
-import com.helloworld.DAO.CustomerRepository;
-import com.helloworld.model.Customer;
+import com.helloworld.DAO.UserRepository;
+import com.helloworld.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -14,10 +14,10 @@ class LoadDatabase {
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
-    CommandLineRunner initDatabase(CustomerRepository repository) {
+    CommandLineRunner initDatabase(UserRepository repository) {
         return args -> {
-            log.info("Preloading " + repository.save(new Customer("John", "Doe")));
-            log.info("Preloading " + repository.save(new Customer("Jane", "Doess" )));
+            log.info("Preloading " + repository.save(new User("John", "Doe")));
+            log.info("Preloading " + repository.save(new User("Jane", "Doess" )));
         };
     }
 }

@@ -22,21 +22,20 @@
         <th>Last</th>
         <th>Action</th>
         <tb>
-            <tr th:each="customer: ${customers}">
-                <td id="${customer.id}" style="hidden" th:text="${customer.id}"></td>
-                <td th:text="${customer.firstName}"></td>
-                <td th:text="${customer.lastName}"></td>
+            <tr th:each="user: ${users}">
+                <td id="${user.id}" style="hidden" th:text="${user.id}"></td>
+                <td th:text="${user.firstName}"></td>
+                <td th:text="${user.lastName}"></td>
                 <td>
                     <button id="editBtn" class="btn btn-info" data-toggle="modal"
-                            th:data-user-id="${customer.id}"
-                            th:onclick="'javascript:updateCustomer(\''+ ${customer.id} +'\')'"
+                            th:data-user-id="${user.id}"
+                            th:onclick="'javascript:updateUser(\''+ ${user.id} +'\')'"
                             data-target="#exampleModal">
                         Edit
                     </button>
                 </td>
             </tr>
         </tb>
-        <!--th:href="@{/updateCustomer(customerId=${customer.id})}"-->
 
     </table>
 </div>
@@ -67,16 +66,16 @@
                 </div>
                 <div class="modal-body">
 
-                    <input name="id" id="selectedCustomerId" type="hidden">
+                    <input name="id" id="selectedUserId" type="hidden">
                     <row><label for="firstName">Update First Name:</label>
                         <input name="newFirst" id="firstName"></row>
                     <row><label for="lastName">Update Last Name:</label>
                         <input name="newLast" id="lastName"></row>
-                    <!--<button>update customer</button>-->
+                    <!--<button>update user</button>-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" id="updateCustomerBtn" class="btn btn-primary"> Update
+                    <button type="submit" id="updateUserBtn" class="btn btn-primary"> Update
                     </button>
                 </div>
             </form>
@@ -97,9 +96,9 @@
 
 
 <script type="text/javascript">
-function updateCustomer(id) {
-            alert("Updating Customer with ID " + id);
-            document.getElementById("selectedCustomerId").value = id;
+function updateUser(id) {
+            alert("Updating User with ID " + id);
+            document.getElementById("selectedUserId").value = id;
 }
 
 </script>

@@ -18,7 +18,7 @@
 <div class="container" style="height: 100vh">
     <h2>Add Your Name</h2>
     <hr/>
-    <form th:action="@{/iter2Add}" th:object="${customer}" method="POST">
+    <form th:action="@{/iter2Add}" th:object="${user}" method="POST">
         <input type="text" th:field="*{firstName}" placeholder="Enter First Name"/>
         <input type="text" th:field="*{lastName}" placeholder="Enter Last Name"/>
 

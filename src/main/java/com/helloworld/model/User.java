@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "customer")
 @Data
 @AllArgsConstructor
-public class Customer {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +19,11 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    public Customer (){
+    public User(){
 
     }
 
-    public Customer (String first, String last){
+    public User(String first, String last){
         firstName = first;
         lastName = last;
     }
