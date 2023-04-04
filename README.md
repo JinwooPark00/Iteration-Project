@@ -1,6 +1,6 @@
 # Iteration Project
 
-A web application created as a proof of concept, to show iterative learning and development in one place.
+A web application created as a proof of concept to show iterative learning and development in one place.
 
 ## Description
 
