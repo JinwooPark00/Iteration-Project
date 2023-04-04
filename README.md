@@ -22,7 +22,7 @@ complex project by starting a completely new project with a more thought-out des
 ### Installing
 
 * Git clone
-* run Maven build command
+* Run Maven build command
 
 ### Executing program
 
